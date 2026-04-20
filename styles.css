@@ -22,18 +22,29 @@ header {
     top: 0;
     z-index: 1000;
 }
+.navbar {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+
+    display: flex;              /* THIS is what you're missing */
+    justify-content: space-between;
+    align-items: center;
+}
 
 @media (max-width: 768px) {
 
+    @media (max-width: 768px) {
+
     .navbar {
-        flex-direction: row; /* keep horizontal */
-        justify-content: space-between;
-        align-items: center;
+        flex-wrap: nowrap;   /* prevents stacking */
     }
 
     .nav-links {
-        display: none; /* hide links to save space */
+        display: none;       /* hide links */
     }
+
+}
 
 }
 .logo {
