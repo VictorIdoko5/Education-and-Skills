@@ -13,39 +13,47 @@ body {
     color: #222;
 }
 
-/* NAVBAR */
-header {
-    background: #0f172a;
-    color: #fff;
-    padding: 15px 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-.navbar {
-    width: 90%;
-    max-width: 1100px;
-    margin: auto;
-
-    display: flex;              /* THIS is what you're missing */
-    justify-content: space-between;
-    align-items: center;
+/* HAMBURGER BASE */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
 }
 
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* MOBILE MENU */
 @media (max-width: 768px) {
 
-    @media (max-width: 768px) {
-
-    .navbar {
-        flex-wrap: nowrap;   /* prevents stacking */
+    .menu-toggle {
+        display: flex;
     }
 
     .nav-links {
-        display: none;       /* hide links */
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #0f172a;
+        width: 200px;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        gap: 15px;
+
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
     }
 
-}
-
+    .nav-links.active {
+        transform: translateX(0);
+    }
 }
 .logo {
     font-size: 1.4rem;
